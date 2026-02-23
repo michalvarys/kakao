@@ -197,6 +197,7 @@
         letter-spacing: 0.3px;
         transition: all 0.3s ease;
         padding: 12px 0;
+        margin-top: 16px;
       }
 
       .hero-scroll-link:hover {
@@ -477,7 +478,6 @@
         line-height: 1.6;
       }
 
-      /* comparison table inside benefits */
       .comparison-wrap {
         max-width: 800px;
         margin: 0 auto;
@@ -629,11 +629,9 @@
       .price-tier.basic .price-tier-label {
         color: #aaa;
       }
-
       .price-tier.premium .price-tier-label {
         color: #8a7356;
       }
-
       .price-tier.ours .price-tier-label {
         color: var(--gold);
       }
@@ -648,11 +646,9 @@
       .price-tier.basic .price-tier-price {
         color: #999;
       }
-
       .price-tier.premium .price-tier-price {
         color: #6b5a42;
       }
-
       .price-tier.ours .price-tier-price {
         color: var(--gold);
       }
@@ -666,7 +662,6 @@
       .price-tier.premium .price-tier-unit {
         color: #aaa;
       }
-
       .price-tier.ours .price-tier-unit {
         color: rgba(255, 255, 255, 0.5);
       }
@@ -684,7 +679,6 @@
       .price-tier.premium .price-tier-features li {
         color: #888;
       }
-
       .price-tier.ours .price-tier-features li {
         color: rgba(255, 255, 255, 0.75);
       }
@@ -742,7 +736,7 @@
         color: var(--brown-deep);
       }
 
-      /* ── OFFER — the big reveal ── */
+      /* ── OFFER ── */
       .offer {
         padding: 100px 20px;
         background: var(--cream);
@@ -797,9 +791,6 @@
         color: var(--white);
         position: relative;
         overflow: hidden;
-      }
-
-      .offer-card {
         --glow-x: 90%;
         --glow-y: 10%;
       }
@@ -1202,9 +1193,6 @@
         color: var(--white);
         text-align: center;
         position: relative;
-      }
-
-      .final-cta {
         --glow-x: 50%;
         --glow-y: 50%;
       }
@@ -1425,13 +1413,334 @@
         will-change: transform;
       }
 
-      /* ── GSAP HIDDEN (applied via JS, so content visible without JS) ── */
-      .gs-hidden {
-        opacity: 0;
+      /* ── HERO THEOBROMIN PILL ── */
+      .hero-theobromin-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        background: rgba(201, 169, 110, 0.1);
+        border: 1px solid rgba(201, 169, 110, 0.3);
+        border-radius: 100px;
+        padding: 8px 18px;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--gold-light);
+        letter-spacing: 0.3px;
+        white-space: nowrap;
       }
 
-      /* ── RESPONSIVE ── */
+      .htp-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        animation: pulse-dot 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.7);
+        }
+      }
+
+      .htp-arrow {
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      .htp-arrow a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .htp-arrow a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── THEOBROMIN SECTION ── */
+      .theobromin {
+        padding: 100px 20px;
+        background: var(--white);
+      }
+
+      .theobromin-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .theobromin-inner h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 700;
+        color: var(--brown-deep);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .theo-subtitle {
+        color: #888;
+        font-size: 1rem;
+        margin-bottom: 56px;
+      }
+
+      .theo-compare {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 0;
+        align-items: start;
+        margin-bottom: 36px;
+      }
+
+      .theo-card {
+        border-radius: 20px;
+        padding: 36px 28px;
+        text-align: left;
+      }
+
+      .theo-card.caffeine {
+        background: #fafafa;
+        border: 1px solid #eee;
+      }
+
+      .theo-card.theobromin-card {
+        background: linear-gradient(
+          135deg,
+          var(--brown-deep),
+          var(--brown-rich)
+        );
+        border: 1px solid rgba(201, 169, 110, 0.3);
+      }
+
+      .theo-card-header {
+        margin-bottom: 24px;
+      }
+
+      .theo-molecule {
+        font-family: "Playfair Display", serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #bbb;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .theo-molecule.gold {
+        color: var(--gold);
+      }
+
+      .theo-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .theo-card.caffeine h3 {
+        color: var(--brown-deep);
+      }
+
+      .theo-card.theobromin-card h3 {
+        color: var(--gold-light);
+      }
+
+      .theo-source {
+        font-size: 0.78rem;
+        color: #aaa;
+        font-style: italic;
+      }
+
+      .theo-card.theobromin-card .theo-source {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* Energy curve chart */
+      .theo-curve-wrap {
+        position: relative;
+        margin: 20px 0 24px;
+        padding: 0 0 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .theo-card.theobromin-card .theo-curve-wrap {
+        border-bottom-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .theo-curve {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .theo-curve-label {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #ccc;
+        position: absolute;
+      }
+
+      .theo-card.theobromin-card .theo-curve-label {
+        color: rgba(255, 255, 255, 0.2);
+      }
+
+      .theo-curve-label.top {
+        top: -4px;
+        left: 0;
+      }
+
+      .theo-curve-label.bottom {
+        bottom: 4px;
+        right: 0;
+      }
+
+      /* List */
+      .theo-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .theo-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      .theo-list li svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .theo-list li.bad {
+        color: #999;
+      }
+
+      .theo-list li.bad svg {
+        color: #e74c3c;
+      }
+
+      .theo-list li.good {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .theo-list li.good svg {
+        color: var(--gold);
+      }
+
+      /* VS divider */
+      .theo-vs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        padding-top: 80px;
+        font-family: "Playfair Display", serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #ccc;
+        letter-spacing: 3px;
+      }
+
+      /* Footnote */
+      .theo-footnote {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        background: #f8f5f1;
+        border-left: 3px solid var(--gold);
+        border-radius: 0 8px 8px 0;
+        padding: 14px 18px;
+        font-size: 0.82rem;
+        color: #777;
+        line-height: 1.6;
+        text-align: left;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .theo-footnote svg {
+        flex-shrink: 0;
+        color: var(--gold-dark);
+        margin-top: 2px;
+      }
+
       @media (max-width: 768px) {
+        .theo-compare {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .theo-vs {
+          padding-top: 0;
+          font-size: 0.8rem;
+        }
+
+        .hero-theobromin-pill {
+          font-size: 0.76rem;
+          padding: 7px 14px;
+          gap: 8px;
+          white-space: nowrap;
+        }
+      }
+
+      /* Výchozí stav textů v tlačítkách (desktop) */
+      .btn-text-desktop {
+        display: inline;
+      }
+      .btn-text-mobile {
+        display: none;
+      }
+
+      /* ══════════════════════════════════════════
+         RESPONSIVE — MOBILE
+      ══════════════════════════════════════════ */
+      @media (max-width: 768px) {
+        /* ── TOP BAR: dvouřádkový layout ── */
+        .top-bar {
+          flex-direction: column;
+          gap: 3px;
+          padding: 8px 12px;
+          text-align: center;
+        }
+
+        .top-bar .brand {
+          font-size: 1rem;
+          letter-spacing: 2px;
+        }
+
+        .top-bar > span:not(.brand) {
+          font-size: 0.72rem;
+          font-weight: 600;
+          letter-spacing: 0.2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: nowrap;
+          gap: 4px;
+          line-height: 1.3;
+          color: var(--gold-light);
+          white-space: nowrap;
+        }
+
+        /* Skryjeme SVG ikonu v top baru na malých obrazovkách */
+        .top-bar > span:not(.brand) svg {
+          display: none;
+        }
+
+        /* ── HERO: úpravy pro mobil ── */
         .hero {
           min-height: 80vh;
         }
@@ -1454,6 +1763,24 @@
           max-width: 100%;
         }
 
+        /* Hero badge – na mobilu zjednodušit, skrýt duplikát brandu */
+        .hero-badge {
+          padding: 7px 16px;
+          font-size: 0.7rem;
+          letter-spacing: 1.5px;
+          gap: 6px;
+        }
+
+        /* Skryjeme "EZOPEACH ·" část v hero badge na mobilu,
+           protože brand je už v top baru */
+        .hero-badge .brand {
+          display: none;
+        }
+
+        .hero-badge .hero-badge-sep {
+          display: none;
+        }
+
         .hero-sub {
           margin-left: auto;
           margin-right: auto;
@@ -1463,6 +1790,7 @@
           justify-content: center;
         }
 
+        /* ── Ostatní sekce ── */
         .problem-grid {
           grid-template-columns: 1fr;
         }
@@ -1497,8 +1825,25 @@
         }
 
         .final-btn {
-          padding: 18px 36px;
-          font-size: 1rem;
+          padding: 18px 24px;
+          font-size: 0.92rem;
+          letter-spacing: 0;
+          white-space: nowrap;
+        }
+
+        .offer-cta {
+          padding: 18px 24px;
+          font-size: 0.92rem;
+          letter-spacing: 0;
+          white-space: nowrap;
+        }
+
+        /* Mobilní/desktopové texty v tlačítkách */
+        .btn-text-desktop {
+          display: none;
+        }
+        .btn-text-mobile {
+          display: inline;
         }
 
         .trust-badges {
@@ -1510,11 +1855,9 @@
         .offer-items {
           gap: 12px;
         }
-
         .nutrient-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-
         .countdown-item .num {
           width: 48px;
           height: 48px;
@@ -1531,8 +1874,8 @@
         ><span class="brand-ezo">EZO</span
         ><span class="brand-peach">PEACH</span></span
       >
-      <span
-        ><svg
+      <span>
+        <svg
           width="14"
           height="14"
           viewBox="0 0 24 24"
@@ -1552,12 +1895,12 @@
             d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"
           />
         </svg>
-        Limitovaná akce — <span>300g ZDARMA</span> ke každému balení</span
-      >
+        Limitovaná akce — <span>300g ZDARMA</span> ke každému balení
+      </span>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════
-       1. HERO — emotional hook, NO price, NO CTA
+       1. HERO
        ═══════════════════════════════════════════════════════ -->
     <section class="hero">
       <div class="hero-bg">
@@ -1577,19 +1920,30 @@
       <div class="hero-inner">
         <div class="hero-content">
           <div class="hero-badge">
+            <!-- Brand skrytý na mobilu přes CSS, viditelný na desktopu -->
             <span class="brand" style="font-size: 0.85rem"
               ><span class="brand-ezo">EZO</span
               ><span class="brand-peach">PEACH</span></span
             >
-            &nbsp;·&nbsp; 100% Bio · Ceremoniální kvalita
+            <span class="hero-badge-sep">&nbsp;·&nbsp;</span>
+            100% Bio · Ceremoniální kvalita
           </div>
           <h1>
-            Čisté nepražené bio kakao,<br /><em>jaké jste ještě neochutnali</em>
+            Nepražené kakao<br />z peruánských pralesů.<br /><em
+              >Alternativa kávy.</em
+            >
           </h1>
           <p class="hero-sub">
-            Raw, nepražené, nealkalizované. Plné antioxidantů, hořčíku a
-            přirozené energie. Přímo z peruánských pralesů až k vám.
+            Theobromin místo kofeinu — stabilní energie bez nervozity, bez
+            bušení srdce, bez odpoledního propadu.
           </p>
+          <div class="hero-theobromin-pill">
+            <span class="htp-dot"></span>
+            Theobromin: energie bez výkyvů
+            <span class="htp-arrow"
+              >→ <a href="#theobromin">jak funguje</a></span
+            >
+          </div>
           <a href="#problem" class="hero-scroll-link">
             Zjistěte, proč je jiné
             <svg
@@ -1611,7 +1965,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-       2. PROBLÉM — raise the problem
+       2. PROBLÉM
        ═══════════════════════════════════════════════════════ -->
     <section class="problem" id="problem">
       <div class="problem-inner">
@@ -1622,12 +1976,10 @@
           odstranil to nejcennější. Zbylo vám prázdné hnědé nic — a vy za to
           platíte plnou cenu.
         </p>
-
         <div class="problem-grid">
           <div class="problem-col bad">
             <div class="problem-col-title">
-              <span class="dot"></span>
-              Běžné kakao z obchodu
+              <span class="dot"></span>Běžné kakao z obchodu
             </div>
             <ul class="problem-list">
               <li>
@@ -1642,9 +1994,8 @@
                     stroke-linecap="round"
                   >
                     <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" /></svg
-                ></span>
-                Pražení při 150 °C+ ničí až 90 % flavonoidů
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span
+                >Pražení při 150 °C+ ničí až 90 % flavonoidů
               </li>
               <li>
                 <span class="icon"
@@ -1658,9 +2009,8 @@
                     stroke-linecap="round"
                   >
                     <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" /></svg
-                ></span>
-                Alkalizace odstraňuje přirozené antioxidanty
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span
+                >Alkalizace odstraňuje přirozené antioxidanty
               </li>
               <li>
                 <span class="icon"
@@ -1674,9 +2024,8 @@
                     stroke-linecap="round"
                   >
                     <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" /></svg
-                ></span>
-                Přidané cukry a příchutě maskují nízkou kvalitu
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span
+                >Přidané cukry a příchutě maskují nízkou kvalitu
               </li>
               <li>
                 <span class="icon"
@@ -1690,9 +2039,8 @@
                     stroke-linecap="round"
                   >
                     <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" /></svg
-                ></span>
-                Neznámý původ — směsi z různých kontinentů
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span
+                >Neznámý původ — směsi z různých kontinentů
               </li>
               <li>
                 <span class="icon"
@@ -1706,16 +2054,14 @@
                     stroke-linecap="round"
                   >
                     <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" /></svg
-                ></span>
-                Minimální obsah vlákniny a minerálů
+                    <line x1="6" y1="6" x2="18" y2="18" /></svg></span
+                >Minimální obsah vlákniny a minerálů
               </li>
             </ul>
           </div>
           <div class="problem-col good">
             <div class="problem-col-title">
-              <span class="dot"></span>
-              Raw BIO kakao (naše)
+              <span class="dot"></span>Raw BIO kakao (naše)
             </div>
             <ul class="problem-list">
               <li>
@@ -1730,9 +2076,8 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                ></span>
-                Nepražené — plný obsah flavonoidů zachován
+                    <polyline points="20 6 9 17 4 12" /></svg></span
+                >Nepražené — plný obsah flavonoidů zachován
               </li>
               <li>
                 <span class="icon"
@@ -1746,9 +2091,8 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                ></span>
-                Nealkalizované — přírodní antioxidanty na maximu
+                    <polyline points="20 6 9 17 4 12" /></svg></span
+                >Nealkalizované — přírodní antioxidanty na maximu
               </li>
               <li>
                 <span class="icon"
@@ -1762,9 +2106,8 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                ></span>
-                Žádné přísady — 100 % čisté kakaové boby
+                    <polyline points="20 6 9 17 4 12" /></svg></span
+                >Žádné přísady — 100 % čisté kakaové boby
               </li>
               <li>
                 <span class="icon"
@@ -1778,9 +2121,8 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                ></span>
-                Jeden původ — Peru, fair trade farmy
+                    <polyline points="20 6 9 17 4 12" /></svg></span
+                >Jeden původ — Peru, fair trade farmy
               </li>
               <li>
                 <span class="icon"
@@ -1794,14 +2136,12 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                ></span>
-                31g vlákniny, 500mg hořčíku na 100g
+                    <polyline points="20 6 9 17 4 12" /></svg></span
+                >31g vlákniny, 500mg hořčíku na 100g
               </li>
             </ul>
           </div>
         </div>
-
         <p class="problem-quote">
           „U běžného kakaa platíte za obal.<br />U nás platíte za
           <em>obsah</em>."
@@ -1810,7 +2150,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-       3. BENEFITY + SROVNÁNÍ — the solution
+       3. BENEFITY + SROVNÁNÍ
        ═══════════════════════════════════════════════════════ -->
     <section class="benefits">
       <div class="benefits-inner">
@@ -1908,10 +2248,6 @@
                 <path d="M6.5 10h11" />
                 <path d="M3 10h3.5" />
                 <path d="M17.5 10H21" />
-                <path d="M3 10v0a1.5 1.5 0 0 1 0-3h0" />
-                <path d="M21 10v0a1.5 1.5 0 0 0 0-3h0" />
-                <path d="M3 10v0a1.5 1.5 0 0 0 0 3h0" />
-                <path d="M21 10v0a1.5 1.5 0 0 1 0 3h0" />
               </svg>
             </div>
             <h3>Plné minerálů</h3>
@@ -1972,8 +2308,6 @@
             </p>
           </div>
         </div>
-
-        <!-- Comparison table integrated here -->
         <div class="comparison-wrap">
           <h3>Fakta mluví jasně</h3>
           <table class="comparison-table">
@@ -2112,7 +2446,257 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-       4. CENOVÁ KOTVA — anchor the price expectation
+       3b. THEOBROMIN — infografika vs. kofein
+       ═══════════════════════════════════════════════════════ -->
+    <section class="theobromin" id="theobromin">
+      <div class="theobromin-inner">
+        <div class="section-label">Věda za energií</div>
+        <h2>Proč theobromin,<br />ne kofein?</h2>
+        <p class="theo-subtitle">Obě látky vás probudí. Ale takhle jinak.</p>
+
+        <div class="theo-compare">
+          <!-- KOFEIN -->
+          <div class="theo-card caffeine">
+            <div class="theo-card-header">
+              <div class="theo-molecule">C₈H₁₀N₄O₂</div>
+              <h3>Kofein</h3>
+              <span class="theo-source">káva, energetické nápoje</span>
+            </div>
+            <div class="theo-curve-wrap">
+              <div class="theo-curve-label top">energie</div>
+              <svg
+                class="theo-curve"
+                viewBox="0 0 200 80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 70 C30 70 40 10 60 8 C80 6 90 65 120 68 C150 71 170 72 190 72"
+                  stroke="#e74c3c"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <circle cx="60" cy="8" r="4" fill="#e74c3c" />
+                <text
+                  x="55"
+                  y="4"
+                  font-size="7"
+                  fill="#e74c3c"
+                  font-family="Inter,sans-serif"
+                >
+                  PEAK
+                </text>
+              </svg>
+              <div class="theo-curve-label bottom">čas</div>
+            </div>
+            <ul class="theo-list">
+              <li class="bad">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" /></svg
+                >Rychlý nástup (15–30 min)
+              </li>
+              <li class="bad">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" /></svg
+                >Nervozita a bušení srdce
+              </li>
+              <li class="bad">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" /></svg
+                >Výrazný crash po 3–4 hod.
+              </li>
+              <li class="bad">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" /></svg
+                >Budí osu stres (kortizol)
+              </li>
+              <li class="bad">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" /></svg
+                >Závislost při pravidelném užívání
+              </li>
+            </ul>
+          </div>
+
+          <div class="theo-vs">VS</div>
+
+          <!-- THEOBROMIN -->
+          <div class="theo-card theobromin-card">
+            <div class="theo-card-header">
+              <div class="theo-molecule gold">C₇H₈N₄O₂</div>
+              <h3>Theobromin</h3>
+              <span class="theo-source">raw kakao</span>
+            </div>
+            <div class="theo-curve-wrap">
+              <div class="theo-curve-label top">energie</div>
+              <svg
+                class="theo-curve"
+                viewBox="0 0 200 80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 68 C40 65 60 30 80 22 C100 14 120 18 140 22 C160 26 175 48 190 62"
+                  stroke="#c9a96e"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <circle cx="110" cy="16" r="4" fill="#c9a96e" />
+                <text
+                  x="105"
+                  y="12"
+                  font-size="7"
+                  fill="#c9a96e"
+                  font-family="Inter,sans-serif"
+                >
+                  PLATEAU
+                </text>
+              </svg>
+              <div class="theo-curve-label bottom">čas</div>
+            </div>
+            <ul class="theo-list">
+              <li class="good">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Pomalý, plynulý nástup
+              </li>
+              <li class="good">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Klid + soustředění zároveň
+              </li>
+              <li class="good">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Žádný crash — energie trvá 6–8 hod.
+              </li>
+              <li class="good">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Mírně snižuje krevní tlak
+              </li>
+              <li class="good">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" /></svg
+                >Bez závislosti, bez tolerance
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="theo-footnote">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          Theobromin blokuje adenosinové receptory stejně jako kofein, ale
+          slabší vazbou — odtud klidnější, delší účinek bez stimulace sympatiku.
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+       4. CENOVÁ KOTVA
        ═══════════════════════════════════════════════════════ -->
     <section class="price-anchor">
       <div class="price-anchor-inner">
@@ -2122,7 +2706,6 @@
           Kvalitní raw BIO kakao není levné — a nemá být. Podívejte se, kolik
           stojí na trhu kakao, které si zaslouží označení „prémiové".
         </p>
-
         <div class="price-tiers">
           <div class="price-tier basic">
             <div class="price-tier-label">Ceremoniální kakao</div>
@@ -2155,19 +2738,17 @@
             </ul>
           </div>
         </div>
-
         <p class="price-anchor-conclusion">
           Zatímco srovnatelné kakao stojí <strong>180–400 Kč za 100g</strong>,
           naše běžná cena je pouhých
-          <span class="price-highlight">128 Kč / 100g</span>.<br />
-          Za 500g tak normálně zaplatíte <strong>640 Kč</strong>. Ale dnes to
-          bude jinak…
+          <span class="price-highlight">128 Kč / 100g</span>.<br />Za 500g tak
+          normálně zaplatíte <strong>640 Kč</strong>. Ale dnes to bude jinak…
         </p>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-       5. NABÍDKA — the irresistible reveal
+       5. NABÍDKA
        ═══════════════════════════════════════════════════════ -->
     <section class="offer" id="offer">
       <div class="offer-inner">
@@ -2177,7 +2758,6 @@
           Celkem půl kila toho nejlepšího BIO kakaa z Peru za cenu, která vás
           překvapí.
         </p>
-
         <div class="offer-card">
           <div class="offer-items">
             <div class="offer-item">
@@ -2191,34 +2771,30 @@
               <div class="free-tag">Zdarma</div>
             </div>
           </div>
-
           <div class="offer-pricing">
             <div class="price-original">640 Kč</div>
             <div class="price-current">384 Kč <small>/ 500g</small></div>
             <div class="price-savings">Ušetříte 256 Kč (40 %)</div>
           </div>
-
           <div class="price-per-100g">
-            Pouhých <strong>77 Kč / 100g</strong> &nbsp;
-            <span class="vs">místo 128 Kč / 100g</span>
+            Pouhých <strong>77 Kč / 100g</strong> &nbsp;<span class="vs"
+              >místo 128 Kč / 100g</span
+            >
           </div>
-
-          <!-- COUNTDOWN -->
           <div class="countdown-bar" id="countdown">
             <div class="countdown-item">
-              <span class="num" id="cd-hours">00</span>
-              <span class="unit">hod</span>
+              <span class="num" id="cd-hours">00</span
+              ><span class="unit">hod</span>
             </div>
             <div class="countdown-item">
-              <span class="num" id="cd-minutes">00</span>
-              <span class="unit">min</span>
+              <span class="num" id="cd-minutes">00</span
+              ><span class="unit">min</span>
             </div>
             <div class="countdown-item">
-              <span class="num" id="cd-seconds">00</span>
-              <span class="unit">sek</span>
+              <span class="num" id="cd-seconds">00</span
+              ><span class="unit">sek</span>
             </div>
           </div>
-
           <a href="#STRIPE_LINK" class="offer-cta">Chci 500g za 384 Kč</a>
           <p class="offer-note">
             Bezpečná platba přes Stripe · Doprava do 3 pracovních dnů
@@ -2238,54 +2814,7 @@
         <h2>Proč se k nám lidé vrací</h2>
         <div class="testimonials">
           <div class="testimonial">
-            <div class="testimonial-stars">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-            </div>
+            <div class="testimonial-stars">★★★★★</div>
             <p>
               „Přešla jsem z kávy na toto kakao a nechápu, proč jsem to
               neudělala dřív. Energie celý den bez nervozity."
@@ -2293,54 +2822,7 @@
             <div class="testimonial-author">— Markéta, Praha</div>
           </div>
           <div class="testimonial">
-            <div class="testimonial-stars">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-            </div>
+            <div class="testimonial-stars">★★★★★</div>
             <p>
               „Konečně kakao, které chutná opravdově. Cítíte ten rozdíl hned po
               prvním doušku. Naprosto jiná liga."
@@ -2348,54 +2830,7 @@
             <div class="testimonial-author">— Tomáš, Brno</div>
           </div>
           <div class="testimonial">
-            <div class="testimonial-stars">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                /></svg
-              ><svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                />
-              </svg>
-            </div>
+            <div class="testimonial-stars">★★★★★</div>
             <p>
               „Děti ho milují v smoothie a já zase jako ranní rituál.
               Objednáváme pravidelně — a ta akce je neuvěřitelná."
@@ -2465,7 +2900,6 @@
     <section class="faq">
       <div class="faq-inner">
         <h2>Časté dotazy</h2>
-
         <div class="faq-item">
           <button class="faq-question">
             Jaký je rozdíl oproti běžnému kakau z obchodu?
@@ -2478,7 +2912,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">Jak ho mám připravit?</button>
           <div class="faq-answer">
@@ -2489,7 +2922,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">Je tato akce opravdu limitovaná?</button>
           <div class="faq-answer">
@@ -2500,7 +2932,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">Jak rychle dorazí zásilka?</button>
           <div class="faq-answer">
@@ -2510,7 +2941,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">Mohu kakao používat každý den?</button>
           <div class="faq-answer">
@@ -2525,7 +2955,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
-       9. FINAL CTA — with price anchor callback
+       9. FINAL CTA
        ═══════════════════════════════════════════════════════ -->
     <section class="final-cta">
       <div class="final-cta-inner">
@@ -2537,7 +2967,6 @@
           Srovnatelné kakao na trhu stojí 180–400 Kč za 100g. Vy dnes zaplatíte
           pouhých 77 Kč — a 300g navíc dostanete jako dárek.
         </p>
-
         <div class="final-offer-row">
           <span class="final-price-old">640 Kč</span>
           <span class="final-price-arrow">→</span>
@@ -2546,9 +2975,9 @@
         <p class="final-price-per">
           jen <strong>77 Kč / 100g</strong> místo běžných 128 Kč
         </p>
-
         <a href="#STRIPE_LINK" class="final-btn">
-          Objednat nyní — ušetřím 256 Kč
+          <span class="btn-text-desktop">Objednat nyní — ušetřím 256 Kč</span>
+          <span class="btn-text-mobile">Objednat · ušetřím 256 Kč</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -3165,31 +3594,29 @@
         });
 
         // 3. CTA magnetic effect
-        document
-          .querySelectorAll(".offer-cta, .final-btn")
-          .forEach((btn) => {
-            btn.addEventListener("mousemove", (e) => {
-              const rect = btn.getBoundingClientRect();
-              const px = e.clientX - rect.left - rect.width / 2;
-              const py = e.clientY - rect.top - rect.height / 2;
-              gsap.to(btn, {
-                x: px * 0.15,
-                y: py * 0.2,
-                duration: 0.3,
-                ease: "power2.out",
-                overwrite: "auto",
-              });
-            });
-            btn.addEventListener("mouseleave", () => {
-              gsap.to(btn, {
-                x: 0,
-                y: 0,
-                duration: 0.5,
-                ease: "elastic.out(1, 0.3)",
-                overwrite: "auto",
-              });
+        document.querySelectorAll(".offer-cta, .final-btn").forEach((btn) => {
+          btn.addEventListener("mousemove", (e) => {
+            const rect = btn.getBoundingClientRect();
+            const px = e.clientX - rect.left - rect.width / 2;
+            const py = e.clientY - rect.top - rect.height / 2;
+            gsap.to(btn, {
+              x: px * 0.15,
+              y: py * 0.2,
+              duration: 0.3,
+              ease: "power2.out",
+              overwrite: "auto",
             });
           });
+          btn.addEventListener("mouseleave", () => {
+            gsap.to(btn, {
+              x: 0,
+              y: 0,
+              duration: 0.5,
+              ease: "elastic.out(1, 0.3)",
+              overwrite: "auto",
+            });
+          });
+        });
 
         // 4. Offer card — glow follows cursor
         const offerCard = document.querySelector(".offer-card");
