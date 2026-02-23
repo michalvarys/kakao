@@ -14,7 +14,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css"
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -2830,7 +2830,7 @@
               ><span class="unit">sek</span>
             </div>
           </div>
-          <a href="#STRIPE_LINK" class="offer-cta">Chci 500g za 384 Kč</a>
+          <a href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07" class="offer-cta">Chci 500g za 384 Kč</a>
           <p class="offer-note">
             Bezpečná platba přes Stripe · Doprava do 3 pracovních dnů
           </p>
@@ -3010,7 +3010,7 @@
         <p class="final-price-per">
           jen <strong>77 Kč / 100g</strong> místo běžných 128 Kč
         </p>
-        <a href="#STRIPE_LINK" class="final-btn">
+        <a href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07" class="final-btn">
           <span class="btn-text-desktop">Objednat nyní — ušetřím 256 Kč</span>
           <span class="btn-text-mobile">Objednat · ušetřím 256 Kč</span>
           <svg
@@ -3066,7 +3066,7 @@
         <div class="sticky-price">384 Kč</div>
         <div class="sticky-label">500g · sleva 40 %</div>
       </div>
-      <a href="#STRIPE_LINK" class="sticky-btn">Objednat</a>
+      <a href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07" class="sticky-btn">Objednat</a>
     </div>
 
     <!-- GSAP + ScrollTrigger -->
@@ -3152,9 +3152,8 @@
       // ── SMOOTH SCROLL FOR ANCHOR LINKS ──
       document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener("click", (e) => {
-          const href = link.getAttribute("href");
-          if (href === "#STRIPE_LINK") return;
           e.preventDefault();
+          const href = link.getAttribute("href");
           const target = document.querySelector(href);
           if (target) target.scrollIntoView({ behavior: "smooth" });
         });

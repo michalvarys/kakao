@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(magick:*)",
-      "Bash(gh run list:*)"
+      "Bash(gh run list:*)",
+      "WebFetch(domain:cookieconsent.orestbida.com)"
     ]
   }
 }
