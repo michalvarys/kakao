@@ -6,7 +6,7 @@
     <title>RAW BIO Kakao — Exkluzivní limitovaná nabídka</title>
     <meta
       name="description"
-      content="100% raw BIO kakao z ghanských plantáží — bohatší chuť než peruánské odrůdy. 200g + 300g ZDARMA za pouhých 384 Kč. Limitovaná akce — pouze do vyprodání zásob."
+      content="100% raw BIO kakao z plantáží — bohatší chuť než peruánské odrůdy. 200g + 300g ZDARMA za pouhých 384 Kč. Limitovaná akce — pouze do vyprodání zásob."
     />
     <link
       rel="stylesheet"
@@ -2338,8 +2338,8 @@
             </div>
             <h3>Etický původ</h3>
             <p>
-              Fair trade z ghanských farem v oblasti Ashanti — tradice pěstování
-              kakaa sahající staletí zpět. Každý nákup podporuje místní farmáře.
+              Fair trade z farem v oblasti Ashanti — tradice pěstování kakaa
+              sahající staletí zpět. Každý nákup podporuje místní farmáře.
             </p>
           </div>
         </div>
@@ -2763,7 +2763,7 @@
             </ul>
           </div>
           <div class="price-tier ours">
-            <div class="price-tier-label">Naše BIO kakao z Ghany</div>
+            <div class="price-tier-label">Naše BIO kakao</div>
             <div class="price-tier-price">128 Kč</div>
             <div class="price-tier-unit">za 100g · běžná cena</div>
             <ul class="price-tier-features">
@@ -2790,8 +2790,7 @@
         <div class="offer-eyebrow">Ale dnes to bude jinak</div>
         <h2>Objednejte 200g —<br />a <em>300g dostanete zdarma</em></h2>
         <p class="offer-subtitle">
-          Celkem půl kila toho nejlepšího BIO kakaa z Ghany za cenu, která vás
-          překvapí.
+          Celkem půl kila toho nejlepšího BIO kakaa za cenu, která vás překvapí.
         </p>
         <div class="offer-card">
           <div class="offer-items">
@@ -2830,7 +2829,11 @@
               ><span class="unit">sek</span>
             </div>
           </div>
-          <a href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07" class="offer-cta">Chci 500g za 384 Kč</a>
+          <a
+            href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07"
+            class="offer-cta"
+            >Chci 500g za 384 Kč</a
+          >
           <p class="offer-note">
             Bezpečná platba přes Stripe · Doprava do 3 pracovních dnů
           </p>
@@ -3010,7 +3013,10 @@
         <p class="final-price-per">
           jen <strong>77 Kč / 100g</strong> místo běžných 128 Kč
         </p>
-        <a href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07" class="final-btn">
+        <a
+          href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07"
+          class="final-btn"
+        >
           <span class="btn-text-desktop">Objednat nyní — ušetřím 256 Kč</span>
           <span class="btn-text-mobile">Objednat · ušetřím 256 Kč</span>
           <svg
@@ -3066,7 +3072,11 @@
         <div class="sticky-price">384 Kč</div>
         <div class="sticky-label">500g · sleva 40 %</div>
       </div>
-      <a href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07" class="sticky-btn">Objednat</a>
+      <a
+        href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07"
+        class="sticky-btn"
+        >Objednat</a
+      >
     </div>
 
     <!-- GSAP + ScrollTrigger -->
@@ -3728,11 +3738,10 @@
       src="https://cdn.jsdelivr.net/gh/orestbida/iframemanager@1.2.5/dist/iframemanager.js"
     ></script>
     <script
-      async
-      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js"
-      onload="initCookies()"
+      defer
+      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"
     ></script>
-    <script>
+    <script defer>
       const CAT_NECESSARY = "necessary";
       const CAT_ANALYTICS = "analytics";
       const CAT_ADVERTISEMENT = "advertisement";
@@ -3794,278 +3803,272 @@
         });
       }
 
-      async function initCookies() {
-        if (!CookieConsent) {
-          return;
-        }
-
-        await CookieConsent.run({
-          onFirstConsent: () => {
-            updateGtagConsent();
+      CookieConsent.run({
+        onFirstConsent: () => {
+          updateGtagConsent();
+        },
+        onConsent: () => {
+          updateGtagConsent();
+        },
+        onChange: () => {
+          updateGtagConsent();
+        },
+        guiOptions: {
+          consentModal: {
+            layout: "box inline",
+            position: "bottom right",
+            equalWeightButtons: true,
+            flipButtons: false,
           },
-          onConsent: () => {
-            updateGtagConsent();
+          preferencesModal: {
+            layout: "box",
+            position: "right",
+            equalWeightButtons: true,
+            flipButtons: false,
           },
-          onChange: () => {
-            updateGtagConsent();
+        },
+        categories: {
+          [CAT_NECESSARY]: {
+            enabled: true,
+            readOnly: true,
           },
-          guiOptions: {
-            consentModal: {
-              layout: "box inline",
-              position: "bottom right",
-              equalWeightButtons: true,
-              flipButtons: false,
+          [CAT_ANALYTICS]: {
+            autoClear: {
+              cookies: [
+                {
+                  name: /^_ga/,
+                },
+                {
+                  name: "_gid",
+                },
+              ],
             },
-            preferencesModal: {
-              layout: "box",
-              position: "right",
-              equalWeightButtons: true,
-              flipButtons: false,
+            services: {
+              [SERVICE_ANALYTICS_STORAGE]: {
+                label:
+                  "Enables storage (such as cookies) related to analytics e.g. visit duration.",
+                onAccept() {
+                  updateGtagConsent();
+                },
+                onReject() {
+                  updateGtagConsent();
+                },
+              },
             },
           },
-          categories: {
-            [CAT_NECESSARY]: {
-              enabled: true,
-              readOnly: true,
+          [CAT_ADVERTISEMENT]: {
+            services: {
+              [SERVICE_AD_STORAGE]: {
+                label:
+                  "Enables storage (such as cookies) related to advertising.",
+              },
+              [SERVICE_AD_USER_DATA]: {
+                label:
+                  "Sets consent for sending user data related to advertising to Google.",
+              },
+              [SERVICE_AD_PERSONALIZATION]: {
+                label: "Sets consent for personalized advertising.",
+              },
             },
-            [CAT_ANALYTICS]: {
-              autoClear: {
-                cookies: [
+          },
+          [CAT_FUNCTIONALITY]: {
+            services: {
+              [SERVICE_FUNCTIONALITY_STORAGE]: {
+                label:
+                  "Enables storage that supports the functionality of the website or app e.g. language settings.",
+              },
+              [SERVICE_PERSONALIZATION_STORAGE]: {
+                label:
+                  "Enables storage related to personalization e.g. video recommendations.",
+              },
+            },
+          },
+          [CAT_SECURITY]: {
+            services: {
+              [SERVICE_SECURITY_STORAGE]: {
+                label:
+                  "Enables storage related to security such as authentication functionality, fraud prevention, and other user protection.",
+              },
+            },
+          },
+        },
+        language: {
+          default: "cs",
+          autoDetect: "browser",
+          translations: {
+            cs: {
+              consentModal: {
+                label: "Souhlas s cookies",
+                title: "Ahoj cestovateli, je čas na cookies!",
+                description:
+                  "Naše webová stránka používá nezbytné cookies pro správné fungování a sledovací cookies k pochopení, jak s ní interagujete. Sledovací cookies budou nastaveny až po vašem souhlasu.",
+                acceptAllBtn: "Přijmout vše",
+                closeIconLabel: "Odmítnout vše a zavřít",
+                acceptNecessaryBtn: "Odmítnout vše",
+                showPreferencesBtn: "Spravovat nastavení",
+                footer:
+                  '<a href="#link">Zásady ochrany osobních údajů</a><a href="#link">Obchodní podmínky</a>',
+              },
+              preferencesModal: {
+                title: "Centrum nastavení souhlasu",
+                acceptAllBtn: "Přijmout vše",
+                acceptNecessaryBtn: "Odmítnout vše",
+                savePreferencesBtn: "Uložit nastavení",
+                closeIconLabel: "Zavřít okno",
+                serviceCounterLabel: "Služba|Služby",
+                sections: [
                   {
-                    name: /^_ga/,
+                    title: "Někdo říkal ... cookies?",
+                    description:
+                      "Používáme cookies a další sledovací technologie ke zlepšení vašeho zážitku z prohlížení naší stránky, zobrazení personalizovaného obsahu a reklam, analýze návštěvnosti a pochopení, odkud návštěvníci přicházejí.",
                   },
                   {
-                    name: "_gid",
+                    title:
+                      'Nezbytné cookies <span class="pm__badge">Vždy povoleno</span>',
+                    description:
+                      "Tyto cookies jsou nezbytné pro správné fungování webu a nelze je vypnout.",
+                    linkedCategory: "necessary",
+                  },
+                  {
+                    title: "Analytické cookies",
+                    description:
+                      "Tyto cookies nám pomáhají pochopit, jak návštěvníci používají náš web, a zlepšovat jeho výkon.",
+                    linkedCategory: "analytics",
+                    cookieTable: {
+                      headers: {
+                        name: "Cookie",
+                        Service: "Služba",
+                        description: "Popis",
+                      },
+                      body: [
+                        {
+                          name: "_ga",
+                          description:
+                            "Používá se pro rozlišení uživatelů v Google Analytics.",
+                          Service: "Google Analytics",
+                        },
+                        {
+                          name: "_gid",
+                          description:
+                            "Používá se pro rozlišení uživatelů v Google Analytics.",
+                          Service: "Google Analytics",
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    title: "Reklamní cookies",
+                    description:
+                      "Tyto cookies slouží k zobrazování relevantních reklam a měření jejich účinnosti.",
+                    linkedCategory: "advertisement",
+                  },
+                  {
+                    title: "Funkční cookies",
+                    description:
+                      "Tyto cookies umožňují rozšířené funkce a personalizaci webu.",
+                    linkedCategory: "functionality",
+                  },
+                  {
+                    title: "Bezpečnostní cookies",
+                    description:
+                      "Tyto cookies slouží k zabezpečení webu, autentizaci a ochraně uživatelů.",
+                    linkedCategory: "security",
+                  },
+                  {
+                    title: "Více informací",
+                    description:
+                      'Pokud máte jakékoli dotazy ohledně našich zásad používání cookies a vašich možností, <a class="cc__link" href="mailto:info@ezopeach.eu">kontaktujte nás</a>.',
                   },
                 ],
               },
-              services: {
-                [SERVICE_ANALYTICS_STORAGE]: {
-                  label:
-                    "Enables storage (such as cookies) related to analytics e.g. visit duration.",
-                  onAccept() {
-                    updateGtagConsent();
+            },
+            en: {
+              consentModal: {
+                title: "Hello traveller, it's cookie time!",
+                description:
+                  "Our website uses essential cookies for proper functioning and tracking cookies to understand how you interact with it. Tracking cookies will only be set after your consent.",
+                acceptAllBtn: "Accept all",
+                acceptNecessaryBtn: "Reject all",
+                showPreferencesBtn: "Manage preferences",
+                footer:
+                  '<a href="#link">Privacy Policy</a>\n<a href="#link">Terms and conditions</a>',
+              },
+              preferencesModal: {
+                title: "Consent Preferences Center",
+                acceptAllBtn: "Accept all",
+                acceptNecessaryBtn: "Reject all",
+                savePreferencesBtn: "Save preferences",
+                closeIconLabel: "Close modal",
+                serviceCounterLabel: "Service|Services",
+                sections: [
+                  {
+                    title: "Somebody said ... cookies?",
+                    description:
+                      "We use cookies and other tracking technologies to improve your browsing experience, show personalized content and ads, analyze traffic, and understand where visitors come from.",
                   },
-                  onReject() {
-                    updateGtagConsent();
+                  {
+                    title:
+                      'Strictly necessary cookies <span class="pm__badge">Always enabled</span>',
+                    description:
+                      "These cookies are essential for the website to function properly and cannot be disabled.",
+                    linkedCategory: "necessary",
                   },
-                },
-              },
-            },
-            [CAT_ADVERTISEMENT]: {
-              services: {
-                [SERVICE_AD_STORAGE]: {
-                  label:
-                    "Enables storage (such as cookies) related to advertising.",
-                },
-                [SERVICE_AD_USER_DATA]: {
-                  label:
-                    "Sets consent for sending user data related to advertising to Google.",
-                },
-                [SERVICE_AD_PERSONALIZATION]: {
-                  label: "Sets consent for personalized advertising.",
-                },
-              },
-            },
-            [CAT_FUNCTIONALITY]: {
-              services: {
-                [SERVICE_FUNCTIONALITY_STORAGE]: {
-                  label:
-                    "Enables storage that supports the functionality of the website or app e.g. language settings.",
-                },
-                [SERVICE_PERSONALIZATION_STORAGE]: {
-                  label:
-                    "Enables storage related to personalization e.g. video recommendations.",
-                },
-              },
-            },
-            [CAT_SECURITY]: {
-              services: {
-                [SERVICE_SECURITY_STORAGE]: {
-                  label:
-                    "Enables storage related to security such as authentication functionality, fraud prevention, and other user protection.",
-                },
+                  {
+                    title: "Analytics cookies",
+                    description:
+                      "These cookies help us understand how visitors use our website and improve its performance.",
+                    linkedCategory: "analytics",
+                    cookieTable: {
+                      headers: {
+                        name: "Cookie",
+                        Service: "Service",
+                        description: "Description",
+                      },
+                      body: [
+                        {
+                          name: "_ga",
+                          description:
+                            "Used to distinguish users in Google Analytics.",
+                          Service: "Google Analytics",
+                        },
+                        {
+                          name: "_gid",
+                          description:
+                            "Used to distinguish users in Google Analytics.",
+                          Service: "Google Analytics",
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    title: "Advertisement cookies",
+                    description:
+                      "These cookies are used to display relevant ads and measure their effectiveness.",
+                    linkedCategory: "advertisement",
+                  },
+                  {
+                    title: "Functionality cookies",
+                    description:
+                      "These cookies enable enhanced features and website personalization.",
+                    linkedCategory: "functionality",
+                  },
+                  {
+                    title: "Security cookies",
+                    description:
+                      "These cookies are used for website security, authentication, and user protection.",
+                    linkedCategory: "security",
+                  },
+                  {
+                    title: "More information",
+                    description:
+                      'For any queries in relation to our policy on cookies and your choices, please <a class="cc__link" href="mailto:info@ezopeach.eu">contact us</a>.',
+                  },
+                ],
               },
             },
           },
-          language: {
-            default: "cs",
-            autoDetect: "browser",
-            translations: {
-              cs: {
-                consentModal: {
-                  label: "Souhlas s cookies",
-                  title: "Ahoj cestovateli, je čas na cookies!",
-                  description:
-                    "Naše webová stránka používá nezbytné cookies pro správné fungování a sledovací cookies k pochopení, jak s ní interagujete. Sledovací cookies budou nastaveny až po vašem souhlasu.",
-                  acceptAllBtn: "Přijmout vše",
-                  closeIconLabel: "Odmítnout vše a zavřít",
-                  acceptNecessaryBtn: "Odmítnout vše",
-                  showPreferencesBtn: "Spravovat nastavení",
-                  footer:
-                    '<a href="#link">Zásady ochrany osobních údajů</a><a href="#link">Obchodní podmínky</a>',
-                },
-                preferencesModal: {
-                  title: "Centrum nastavení souhlasu",
-                  acceptAllBtn: "Přijmout vše",
-                  acceptNecessaryBtn: "Odmítnout vše",
-                  savePreferencesBtn: "Uložit nastavení",
-                  closeIconLabel: "Zavřít okno",
-                  serviceCounterLabel: "Služba|Služby",
-                  sections: [
-                    {
-                      title: "Někdo říkal ... cookies?",
-                      description:
-                        "Používáme cookies a další sledovací technologie ke zlepšení vašeho zážitku z prohlížení naší stránky, zobrazení personalizovaného obsahu a reklam, analýze návštěvnosti a pochopení, odkud návštěvníci přicházejí.",
-                    },
-                    {
-                      title:
-                        'Nezbytné cookies <span class="pm__badge">Vždy povoleno</span>',
-                      description:
-                        "Tyto cookies jsou nezbytné pro správné fungování webu a nelze je vypnout.",
-                      linkedCategory: "necessary",
-                    },
-                    {
-                      title: "Analytické cookies",
-                      description:
-                        "Tyto cookies nám pomáhají pochopit, jak návštěvníci používají náš web, a zlepšovat jeho výkon.",
-                      linkedCategory: "analytics",
-                      cookieTable: {
-                        headers: {
-                          name: "Cookie",
-                          Service: "Služba",
-                          description: "Popis",
-                        },
-                        body: [
-                          {
-                            name: "_ga",
-                            description:
-                              "Používá se pro rozlišení uživatelů v Google Analytics.",
-                            Service: "Google Analytics",
-                          },
-                          {
-                            name: "_gid",
-                            description:
-                              "Používá se pro rozlišení uživatelů v Google Analytics.",
-                            Service: "Google Analytics",
-                          },
-                        ],
-                      },
-                    },
-                    {
-                      title: "Reklamní cookies",
-                      description:
-                        "Tyto cookies slouží k zobrazování relevantních reklam a měření jejich účinnosti.",
-                      linkedCategory: "advertisement",
-                    },
-                    {
-                      title: "Funkční cookies",
-                      description:
-                        "Tyto cookies umožňují rozšířené funkce a personalizaci webu.",
-                      linkedCategory: "functionality",
-                    },
-                    {
-                      title: "Bezpečnostní cookies",
-                      description:
-                        "Tyto cookies slouží k zabezpečení webu, autentizaci a ochraně uživatelů.",
-                      linkedCategory: "security",
-                    },
-                    {
-                      title: "Více informací",
-                      description:
-                        'Pokud máte jakékoli dotazy ohledně našich zásad používání cookies a vašich možností, <a class="cc__link" href="mailto:info@ezopeach.eu">kontaktujte nás</a>.',
-                    },
-                  ],
-                },
-              },
-              en: {
-                consentModal: {
-                  title: "Hello traveller, it's cookie time!",
-                  description:
-                    "Our website uses essential cookies for proper functioning and tracking cookies to understand how you interact with it. Tracking cookies will only be set after your consent.",
-                  acceptAllBtn: "Accept all",
-                  acceptNecessaryBtn: "Reject all",
-                  showPreferencesBtn: "Manage preferences",
-                  footer:
-                    '<a href="#link">Privacy Policy</a>\n<a href="#link">Terms and conditions</a>',
-                },
-                preferencesModal: {
-                  title: "Consent Preferences Center",
-                  acceptAllBtn: "Accept all",
-                  acceptNecessaryBtn: "Reject all",
-                  savePreferencesBtn: "Save preferences",
-                  closeIconLabel: "Close modal",
-                  serviceCounterLabel: "Service|Services",
-                  sections: [
-                    {
-                      title: "Somebody said ... cookies?",
-                      description:
-                        "We use cookies and other tracking technologies to improve your browsing experience, show personalized content and ads, analyze traffic, and understand where visitors come from.",
-                    },
-                    {
-                      title:
-                        'Strictly necessary cookies <span class="pm__badge">Always enabled</span>',
-                      description:
-                        "These cookies are essential for the website to function properly and cannot be disabled.",
-                      linkedCategory: "necessary",
-                    },
-                    {
-                      title: "Analytics cookies",
-                      description:
-                        "These cookies help us understand how visitors use our website and improve its performance.",
-                      linkedCategory: "analytics",
-                      cookieTable: {
-                        headers: {
-                          name: "Cookie",
-                          Service: "Service",
-                          description: "Description",
-                        },
-                        body: [
-                          {
-                            name: "_ga",
-                            description:
-                              "Used to distinguish users in Google Analytics.",
-                            Service: "Google Analytics",
-                          },
-                          {
-                            name: "_gid",
-                            description:
-                              "Used to distinguish users in Google Analytics.",
-                            Service: "Google Analytics",
-                          },
-                        ],
-                      },
-                    },
-                    {
-                      title: "Advertisement cookies",
-                      description:
-                        "These cookies are used to display relevant ads and measure their effectiveness.",
-                      linkedCategory: "advertisement",
-                    },
-                    {
-                      title: "Functionality cookies",
-                      description:
-                        "These cookies enable enhanced features and website personalization.",
-                      linkedCategory: "functionality",
-                    },
-                    {
-                      title: "Security cookies",
-                      description:
-                        "These cookies are used for website security, authentication, and user protection.",
-                      linkedCategory: "security",
-                    },
-                    {
-                      title: "More information",
-                      description:
-                        'For any queries in relation to our policy on cookies and your choices, please <a class="cc__link" href="mailto:info@ezopeach.eu">contact us</a>.',
-                    },
-                  ],
-                },
-              },
-            },
-          },
-        });
-      }
+        },
+      });
     </script>
   </body>
 </html>

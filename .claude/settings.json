@@ -3,7 +3,8 @@
     "allow": [
       "Bash(magick:*)",
       "Bash(gh run list:*)",
-      "WebFetch(domain:cookieconsent.orestbida.com)"
+      "WebFetch(domain:cookieconsent.orestbida.com)",
+      "WebFetch(domain:cdn.jsdelivr.net)"
     ]
   }
 }
