@@ -1328,15 +1328,62 @@
       .footer {
         background: var(--brown-deep);
         color: var(--gold);
-        text-align: center;
         padding: 30px 20px;
         font-size: 0.8rem;
       }
 
-      .footer a {
+      .footer__divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--brown-deep), var(--gold-light), var(--brown-deep));
+        margin: 0 auto 24px;
+        opacity: 0.4;
+      }
+
+      .footer__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer__copyright {
+        font-size: 0.8rem;
+        color: var(--gold);
+        letter-spacing: 0.02em;
+      }
+
+      .footer__copyright a {
         color: var(--gold-light);
         text-decoration: none;
         font-weight: 700;
+      }
+
+      .footer__varyshop {
+        font-size: 0.75rem;
+        color: rgba(201, 169, 110, 0.6);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .footer__varyshop-logo {
+        height: 1.2em;
+        width: auto;
+        vertical-align: middle;
+      }
+
+      .footer__varyshop:hover {
+        color: var(--gold-light);
+      }
+
+      @media (max-width: 640px) {
+        .footer__row {
+          flex-direction: column;
+          gap: 0.75rem;
+          text-align: center;
+        }
       }
 
       /* ── STICKY MOBILE CTA ── */
@@ -2830,7 +2877,7 @@
             </div>
           </div>
           <a
-            href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07"
+            href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07?locale=cs"
             class="offer-cta"
             >Chci 500g za 384 Kč</a
           >
@@ -3014,7 +3061,7 @@
           jen <strong>77 Kč / 100g</strong> místo běžných 128 Kč
         </p>
         <a
-          href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07"
+          href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07?locale=cs"
           class="final-btn"
         >
           <span class="btn-text-desktop">Objednat nyní — ušetřím 256 Kč</span>
@@ -3056,14 +3103,20 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <p>
-        <span class="brand"
-          ><span class="brand-ezo">EZO</span
-          ><span class="brand-peach">PEACH</span></span
-        >
-        &nbsp;·&nbsp; &copy; 2026 Všechna práva vyhrazena. ·
-        <a href="mailto:info@ezopeach.eu">Kontakt</a>
-      </p>
+      <div class="footer__divider" aria-hidden="true"></div>
+      <div class="footer__row">
+        <p class="footer__copyright">
+          <span class="brand"
+            ><span class="brand-ezo">EZO</span
+            ><span class="brand-peach">PEACH</span></span
+          >
+          &nbsp;·&nbsp; &copy; 2026 Všechna práva vyhrazena. ·
+          <a href="mailto:info@ezopeach.eu">Kontakt</a>
+        </p>
+        <a href="https://varyshop.eu" target="_blank" rel="noopener noreferrer" class="footer__varyshop">
+          Vytvořeno na platformě <img src="https://www.varyshop.eu/web/static/img/odoo_logo_tiny.png" alt="VaryShop" class="footer__varyshop-logo" /> — all-in-one systém pro tvůj byznys
+        </a>
+      </div>
     </footer>
 
     <!-- STICKY MOBILE CTA -->
@@ -3073,7 +3126,7 @@
         <div class="sticky-label">500g · sleva 40 %</div>
       </div>
       <a
-        href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07"
+        href="https://buy.stripe.com/cNidRbeg58kgaOhcIs2Nq07?locale=cs"
         class="sticky-btn"
         >Objednat</a
       >
@@ -3733,15 +3786,10 @@
       });
     </script>
     <!-- Cookie Consent -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/gh/orestbida/iframemanager@1.2.5/dist/iframemanager.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"
-    ></script>
-    <script defer>
+    <script type="module">
+      import "https://cdn.jsdelivr.net/gh/orestbida/iframemanager@1.2.5/dist/iframemanager.js";
+      import "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js";
+
       const CAT_NECESSARY = "necessary";
       const CAT_ANALYTICS = "analytics";
       const CAT_ADVERTISEMENT = "advertisement";
