@@ -4,7 +4,9 @@
       "Bash(magick:*)",
       "Bash(gh run list:*)",
       "WebFetch(domain:cookieconsent.orestbida.com)",
-      "WebFetch(domain:cdn.jsdelivr.net)"
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "WebFetch(domain:www.vehgroshop.com)",
+      "Read(//tmp/**)"
     ]
   }
 }
